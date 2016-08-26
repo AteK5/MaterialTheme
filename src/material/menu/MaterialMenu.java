@@ -6,6 +6,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import material.stage.MaterialStage;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -23,8 +24,12 @@ public class MaterialMenu extends Parent {
     public MaterialMenu(MaterialStage stage) {
         this.stage = stage;
         this.stage.setMenu(this);
+
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+
         root = new VBox();
-        VBox.setVgrow(root, Priority.ALWAYS);
+        root.setPrefHeight(d.getHeight());
+        root.setStyle("-fx-background-color: #222D32");
         this.getChildren().addAll(root);
     }
 
@@ -47,7 +52,7 @@ public class MaterialMenu extends Parent {
     }
 
     public void setBackgroundColor(String color) {
-
+        root.setStyle("-fx-background-color: " + color);
     }
 
     public void addItem(MaterialMenuButton... buttons) {
@@ -58,6 +63,10 @@ public class MaterialMenu extends Parent {
         }
         Collections.addAll(buttonList, buttons);
         root.getChildren().addAll(buttons);
+    }
+
+    public void setPrefHeight(double height) {
+        root.setPrefHeight(height);
     }
 
     public double getWidth() {
