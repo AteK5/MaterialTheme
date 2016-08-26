@@ -48,11 +48,6 @@ public class MaterialStageController {
     @FXML
     private HBox top;
 
-    @FXML
-    private HBox align;
-
-    @FXML
-    private VBox alignmenu;
 
     private Stage stage;
 
@@ -174,13 +169,5 @@ public class MaterialStageController {
 
     public HBox getTop() {
         return top;
-    }
-
-    public HBox getAlign() {
-        return align;
-    }
-
-    public VBox getAlignmenu() {
-        return alignmenu;
     }
 }

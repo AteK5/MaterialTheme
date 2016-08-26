@@ -47,7 +47,7 @@ public class MaterialMenu extends Parent {
     }
 
     public void setBackgroundColor(String color) {
-        stage.getController().getAlignmenu().setStyle("-fx-background-color: " + color);
+
     }
 
     public void addItem(MaterialMenuButton... buttons) {

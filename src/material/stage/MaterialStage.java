@@ -33,11 +33,14 @@ public class MaterialStage extends Stage {
 
             Parent stage = loader.load();
 
-            HBox.setHgrow(content, Priority.ALWAYS);
-
             controller = loader.getController();
             controller.setStage(this);
-            controller.getAlign().getChildren().addAll(content);
+
+            AnchorPane.setTopAnchor(content, 40.0);
+            AnchorPane.setBottomAnchor(content, 0.0);
+            AnchorPane.setLeftAnchor(content, 0.0);
+            AnchorPane.setRightAnchor(content, 0.0);
+            controller.getBackground().getChildren().add(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -55,11 +58,14 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
-            HBox.setHgrow(content, Priority.ALWAYS);
 
             setStageTitle(title);
 
-            controller.getAlign().getChildren().addAll(content);
+            AnchorPane.setTopAnchor(content, 40.0);
+            AnchorPane.setBottomAnchor(content, 0.0);
+            AnchorPane.setLeftAnchor(content, 0.0);
+            AnchorPane.setRightAnchor(content, 0.0);
+            controller.getBackground().getChildren().add(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -77,12 +83,15 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
-            HBox.setHgrow(content, Priority.ALWAYS);
 
             setStageTitle(title);
             setLogo(icon);
 
-            controller.getAlign().getChildren().addAll(content);
+            AnchorPane.setTopAnchor(content, 40.0);
+            AnchorPane.setBottomAnchor(content, 0.0);
+            AnchorPane.setLeftAnchor(content, 0.0);
+            AnchorPane.setRightAnchor(content, 0.0);
+            controller.getBackground().getChildren().add(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -100,13 +109,16 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
-            HBox.setHgrow(content, Priority.ALWAYS);
 
             setLogo(icon);
             setBackgroundColor(backgroundColor);
             setTopColor(topcolor);
 
-            controller.getAlign().getChildren().addAll(content);
+            AnchorPane.setTopAnchor(content, 40.0);
+            AnchorPane.setBottomAnchor(content, 0.0);
+            AnchorPane.setLeftAnchor(content, 0.0);
+            AnchorPane.setRightAnchor(content, 0.0);
+            controller.getBackground().getChildren().add(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -154,9 +166,11 @@ public class MaterialStage extends Stage {
     public void setMenu(MaterialMenu menu) {
         if (this.menu == null) {
             this.menu = menu;
-
-            controller.getAlignmenu().getChildren().add(this.menu);
-            controller.getAlignmenu().setStyle("-fx-background-color: #222D32");
+            AnchorPane.setLeftAnchor(menu, 0.0);
+            AnchorPane.setTopAnchor(menu, 40.0);
+            AnchorPane.setBottomAnchor(menu, 0.0);
+            AnchorPane.setLeftAnchor(parent, 220.0);
+            controller.getBackground().getChildren().add(menu);
         }
     }
 
