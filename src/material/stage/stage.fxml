@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="material.stage.MaterialStageController">
+   <children>
+      <HBox fx:id="top" alignment="CENTER_LEFT" onMouseDragged="#onMouseDraggedOnTop" prefHeight="40.0" prefWidth="900.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fx:id="title" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="70.0" />
+         </padding>
+      </HBox>
+      <StackPane prefHeight="36.0" prefWidth="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="logo" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+      <HBox alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="minimize" mnemonicParsing="false" onAction="#minimize" prefHeight="40.0" prefWidth="50.0" style="-fx-background-radius: 0; -fx-background-color: transparent;" />
+            <Button fx:id="maximize" mnemonicParsing="false" onAction="#maximize" prefHeight="40.0" prefWidth="50.0" style="-fx-background-radius: 0; -fx-background-color: transparent;" />
+            <Button fx:id="close" mnemonicParsing="false" onAction="#closeW" prefHeight="40.0" prefWidth="50.0" style="-fx-background-radius: 0; -fx-background-color: transparent;" />
+         </children>
+      </HBox>
+      <HBox fx:id="align" layoutY="48.0" prefHeight="620.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <VBox fx:id="alignmenu" prefHeight="620.0" prefWidth="0.0" />
+            <Group fx:id="root" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Button fx:id="resizeButton" layoutX="871.0" layoutY="644.0" mnemonicParsing="false" onMouseDragged="#onResizeDragged" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor></Button>
+   </children>
+</AnchorPane>
