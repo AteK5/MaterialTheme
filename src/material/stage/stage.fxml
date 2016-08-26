@@ -40,7 +40,6 @@
       <HBox fx:id="align" layoutY="48.0" prefHeight="620.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
          <children>
             <VBox fx:id="alignmenu" prefHeight="620.0" prefWidth="0.0" />
-            <Group fx:id="root" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
       <Button fx:id="resizeButton" layoutX="871.0" layoutY="644.0" mnemonicParsing="false" onMouseDragged="#onResizeDragged" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">

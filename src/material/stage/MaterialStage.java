@@ -21,10 +21,11 @@ public class MaterialStage extends Stage {
 
     private MaterialMenu menu;
 
-    private String backgroundcolor = "#DBDBDB";
+    private Parent parent;
 
 
     public MaterialStage(Parent content) {
+        this.parent = content;
         try {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/material/stage/stage.fxml"));
 
@@ -32,8 +33,7 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
-            content.setStyle("-fx-background-color: " + backgroundcolor);
-            controller.root.getChildren().addAll(content);
+            controller.getAlign().getChildren().addAll(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -43,6 +43,7 @@ public class MaterialStage extends Stage {
     }
 
     public MaterialStage(Parent content, String title) {
+        this.parent = content;
         try {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/material/stage/stage.fxml"));
 
@@ -53,8 +54,7 @@ public class MaterialStage extends Stage {
 
             setStageTitle(title);
 
-            content.setStyle("-fx-background-color: " + backgroundcolor);
-            controller.root.getChildren().addAll(content);
+            controller.getAlign().getChildren().addAll(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -64,6 +64,7 @@ public class MaterialStage extends Stage {
     }
 
     public MaterialStage(Parent content, String title, String icon) {
+        this.parent = content;
         try {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/material/stage/stage.fxml"));
 
@@ -75,8 +76,7 @@ public class MaterialStage extends Stage {
             setStageTitle(title);
             setLogo(icon);
 
-            content.setStyle("-fx-background-color: " + backgroundcolor);
-            controller.root.getChildren().addAll(content);
+            controller.getAlign().getChildren().addAll(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -87,6 +87,7 @@ public class MaterialStage extends Stage {
     }
 
     public MaterialStage(Parent content, String icon, String topcolor, String backgroundColor) {
+        this.parent = content;
         try {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/material/stage/stage.fxml"));
             Parent stage = loader.load();
@@ -98,8 +99,7 @@ public class MaterialStage extends Stage {
             setBackgroundColor(backgroundColor);
             setTopColor(topcolor);
 
-            content.setStyle("-fx-background-color: " + backgroundcolor);
-            controller.root.getChildren().addAll(content);
+            controller.getAlign().getChildren().addAll(content);
 
             this.setScene(new Scene(stage));
             this.initStyle(StageStyle.UNDECORATED);
@@ -127,14 +127,8 @@ public class MaterialStage extends Stage {
         }
     }
 
-    public void addContent(Parent ...parent) {
-        for (Parent p : parent)
-            p.setStyle("-fx-background-color: " + backgroundcolor);
-        controller.root.getChildren().addAll(parent);
-    }
-
     public void setBackgroundColor(String color) {
-        this.backgroundcolor = color;
+        this.parent.setStyle("-fx-background-color: " + color);
         controller.getBackground().setStyle("-fx-background-color: " + color);
     }
 
@@ -157,5 +151,13 @@ public class MaterialStage extends Stage {
             controller.getAlignmenu().getChildren().add(this.menu);
             controller.getAlignmenu().setStyle("-fx-background-color: #222D32");
         }
+    }
+
+    public void setPrefWidth(double width) {
+        this.setWidth(width);
+    }
+
+    public void setPrefHeight(double height) {
+        this.setHeight(height);
     }
 }

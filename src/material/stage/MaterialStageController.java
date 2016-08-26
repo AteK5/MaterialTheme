@@ -37,9 +37,6 @@ public class MaterialStageController {
     private Button maximize;
 
     @FXML
-    public Group root;
-
-    @FXML
     protected ImageView logo;
 
     @FXML
@@ -177,6 +174,10 @@ public class MaterialStageController {
 
     public HBox getTop() {
         return top;
+    }
+
+    public HBox getAlign() {
+        return align;
     }
 
     public VBox getAlignmenu() {
