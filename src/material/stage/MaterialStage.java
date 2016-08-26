@@ -5,6 +5,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -31,6 +33,8 @@ public class MaterialStage extends Stage {
 
             Parent stage = loader.load();
 
+            HBox.setHgrow(content, Priority.ALWAYS);
+
             controller = loader.getController();
             controller.setStage(this);
             controller.getAlign().getChildren().addAll(content);
@@ -51,6 +55,7 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
+            HBox.setHgrow(content, Priority.ALWAYS);
 
             setStageTitle(title);
 
@@ -72,6 +77,7 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
+            HBox.setHgrow(content, Priority.ALWAYS);
 
             setStageTitle(title);
             setLogo(icon);
@@ -94,6 +100,7 @@ public class MaterialStage extends Stage {
 
             controller = loader.getController();
             controller.setStage(this);
+            HBox.setHgrow(content, Priority.ALWAYS);
 
             setLogo(icon);
             setBackgroundColor(backgroundColor);
